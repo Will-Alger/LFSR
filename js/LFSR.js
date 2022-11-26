@@ -1,20 +1,35 @@
+const DROP_DOWN_MENU = $('.dropdown-menu');
+const CELL_CONTENTS = $('#cell_contents');
+const CELL_SELECT = $('#cell_select');
+const CELL = $('#cell');
+
 $(function () {
 
 
+    /*
+* .dropdown-menu
+* # cell_contents
+*  # cell_select
+*
+* */
 
 
+    init();
 
 
-    $("#cell_select").on('click', function () {
-        if ($(".dropdown-menu").empty())
-            for (let i = 1; i <= 15; i++) {
-                $(".dropdown-menu").append('<li><a class="dropdown-item">' + i.toString() + '</a></li>')
-            }
+    // swap value of dropdown menu
+    DROP_DOWN_MENU.on('click', '.dropdown-item', function() {
+        CELL_SELECT.html($(this).html());
     });
 
-    $(".dropdown-menu").on('click', '.dropdown-item', function() {
-        $('#cell_select').html($(this).html());
+    CELL_SELECT.on('DOMSubtreeModified', function () {
+        renderCells(CELL_SELECT.html());
+    })
 
+    CELL.each(function () {
+        this.addEventListener("click", function () {
+            $(this).html() === '1' ? $(this).html('0')  : $(this).html('1');
+        });
     });
 
 
@@ -44,6 +59,23 @@ $(function () {
     
 
 })
+ function init() {
+    renderCells(5);
+    renderMenuOptions();
+}
+
+function renderMenuOptions () {
+    for (let i = 1; i <= 20; i++) {
+        DROP_DOWN_MENU.append('<li><a class="dropdown-item">' + i.toString() + '</a></li>')
+    }
+}
+
+function renderCells(n) {
+    $('#cell_contents').empty();
+    for (let i = 0; i < n; i++) {
+        CELL_CONTENTS.append('<td><div class="cell"><button type="button" class="btn btn-outline-dark rounded-0 ">0</button></div></td>');
+    }
+}
 
 
 

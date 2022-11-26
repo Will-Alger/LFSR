@@ -10,6 +10,8 @@
 
 #cell_select {
     width:50px;
+    padding-left:0px;
+    padding-right:0px;
 }
 
 tr td {
@@ -19,8 +21,8 @@ tr td {
     vertical-align: center;
 }
 
-.btn_content button {
-    padding: 15px;
+.cell button {
+    padding: 10px;
     width:50px !important;
     text-align: center;
 }
