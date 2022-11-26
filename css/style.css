@@ -1,3 +1,17 @@
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.num_cells {
+    max-height: 50px;
+    overflow-y: auto;
+}
+
+#cell_select {
+    width:50px;
+}
+
 tr td {
     padding: 0;
     margin: 0;
@@ -9,11 +23,4 @@ tr td {
     padding: 15px;
     width:50px !important;
     text-align: center;
-}
-.btn_content  {
-
-}
-
-.custom {
-
 }

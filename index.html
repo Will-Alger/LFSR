@@ -31,23 +31,59 @@
 
     <main class="px-3">
         <div class="container-sm bg-white text-black rounded-4" style ="padding: 100px; ">
-            <label for="cells">cells</label>
-            <input id="cells" type="text">
-            <button id="reload" type="button">reload</button>
-            <table>
-               <tr>
-                   
-                   
-               </tr>
-            </table>
-            <button id="calculate" type="button" class="btn btn-outline-dark rounded-0">Calculate!</button>
-            <label for="output">Output</label>
-            <textarea style="margin-top: 20px" class="form-control" id="output" rows="3" disabled></textarea>
+<!--            <label for="cells">cells</label>-->
+<!--            <input id="cells" type="text">-->
+<!--            <button id="reload" type="button">reload</button>-->
+<!--            <table>-->
+<!--               <tr>-->
+<!--                   -->
+<!--                   -->
+<!--               </tr>-->
+<!--            </table>-->
+<!--            <button id="calculate" type="button" class="btn btn-outline-dark rounded-0">Calculate!</button>-->
+<!--            <label for="output">Output</label>-->
+<!--            <textarea style="margin-top: 20px" class="form-control" id="output" rows="3" disabled></textarea>-->
+
+
+
+
+            <div class="row">
+                <div class="col-3">
+                    <div class="dropdown float-start">
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="cell_select" data-bs-toggle="dropdown" aria-expanded="false">5</button>
+                        <label for="cell_select"># Cells: </label>
+                        <ul class="dropdown-menu"></ul>
+
+                    </div>
+                </div>
+                <div class="col-5">
+                    <button class="btn btn-outline-dark float-start" type="button">Execute</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-danger" type="button">Reset</button>
+                </div>
+            </div>
+
+<!--            <table>-->
+<!--               <tr id="cell_contents">-->
+
+<!--               </tr>-->
+
+
+<!--            </table>-->
+
+
+
+
+
+
+
+
         </div>
     </main>
 
     <footer class="mt-auto text-white-50">
-        <p>Copyright &copy 2022 (Will Alger)
+        <p>Copyright &copy 2022 (Will Alger, Christian Lane)
             <br>Designed for CSC-483 at  <a href="https://www.nku.edu" class="text-white">Northern Kentucky University</a>
             <br><a href="https://github.com/Will-Alger/LFSR" class="text-white">Github Repository</a>
         </p>
