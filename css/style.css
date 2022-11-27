@@ -25,7 +25,7 @@
     max-height: 400px;
     overflow-y: auto;
     text-align: left;
-    padding: 20px
+    padding: 20px;
 }
 #output p {
     margin-top:2px;

@@ -50,7 +50,27 @@
             </div>
 
             <!--cells are rendered here-->
-            <table class="mt-4"><tr id="cell_contents"></tr></table>
+            <div class="row"><div class="col">
+              <label class="float-start mt-3" for="cell_contents">Register :</label>
+            </div></div>
+            <table class="mt-4">
+                <tr id="cell_contents"></tr>
+
+                <!--
+                TODO 1. render checkboxes in #cell_taps, should be the same number specified in #cell_select
+                TODO 2. on checkbox check/uncheck, change corresponding cell button background to highlighted/un-highlighted
+                TODO 3. create some kind of additional row that displays cells being xored
+                TODO 4. Create additional dropdown after execute (defaults to 1) that allows you to specify how many times it should execute a shift cycle.
+
+                -->
+                <tr id="cell_taps"></tr>
+            </table>
+
+
+            <div class="row m-0 mt-3">
+                <div class="col col-12 bg-secondary bg-opacity-25 rounded-2 p-2" >Math is displayed here</div>
+            </div>
+
 
             <!--output lines are rendered here-->
             <div class="row m-0 mt-3">

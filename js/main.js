@@ -1,3 +1,5 @@
+
+// cache commonly used selectors
 const DROP_DOWN_MENU = $('.dropdown-menu');
 const CELL_CONTENTS = $('#cell_contents');
 const CELL_SELECT = $('#cell_select');
@@ -10,7 +12,7 @@ $(function () {
     init();
 
 
-    // swap value of dropdown menu
+    // when # of cells selected change
     DROP_DOWN_MENU.on('click', '.dropdown-item', function() {
         CELL_SELECT.html($(this).html());
     });
@@ -22,6 +24,7 @@ $(function () {
 
     RESET.on('click', function () {reset();});
 
+    // TODO change to actually do a shift and not just put cell contents in output
     EXECUTE.on('click', function() {
         console.log("hello ")
         let result = " "
@@ -58,7 +61,7 @@ function renderCells(n) {
     }
     $('.cell').each(function () {
        this.addEventListener('click', function(){
-           console.log("hello");
+           OUTPUT.empty();
            $(this).html() === '1' ? $(this).html('0')  : $(this).html('1');
        })
     })
