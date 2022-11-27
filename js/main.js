@@ -30,9 +30,6 @@ $(function () {
         });
         OUTPUT.append(("<p>" + result + "</p>"));
     });
-
-
-
 })
 
 
