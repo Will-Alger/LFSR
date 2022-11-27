@@ -15,7 +15,7 @@ function feedback(taps) { //xor is actually just modulo 2 so this does work
 
 // concatenates to given input the next output
 function keystream_output(num, keystream_input="") {
-    keystream_input = keystream_input.concat(arr[arr.length + 1]);
+    keystream_input = keystream_input.concat(arr[arr.length - 1]);
     return keystream_input;
 }
 
