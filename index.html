@@ -31,23 +31,9 @@
 
     <main class="px-3">
         <div class="container-sm bg-white text-black rounded-4" style ="padding: 100px; ">
-<!--            <label for="cells">cells</label>-->
-<!--            <input id="cells" type="text">-->
-<!--            <button id="reload" type="button">reload</button>-->
-<!--            <table>-->
-<!--               <tr>-->
-<!--                   -->
-<!--                   -->
-<!--               </tr>-->
-<!--            </table>-->
-<!--            <button id="calculate" type="button" class="btn btn-outline-dark rounded-0">Calculate!</button>-->
-<!--            <label for="output">Output</label>-->
-<!--            <textarea style="margin-top: 20px" class="form-control" id="output" rows="3" disabled></textarea>-->
 
-
-
-
-            <div class="row">
+            <!--buttons are placed here-->
+            <div class="row ">
                 <div class="col-auto">
                     <div class="dropdown float-start">
                         <label for="cell_select">Number of cells :</label>
@@ -56,22 +42,20 @@
                     </div>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-outline-dark float-start" type="button">Execute</button>
+                    <button class="btn btn-outline-dark float-start" id="execute" type="button">Execute</button>
                 </div>
                 <div class="col-auto">
-                    <button class="btn btn-danger" type="button">Reset</button>
+                    <button class="btn btn-danger" type="button" id="reset">Reset</button>
                 </div>
             </div>
 
-            <table class="mt-4">
-               <tr id="cell_contents">
+            <!--cells are rendered here-->
+            <table class="mt-4"><tr id="cell_contents"></tr></table>
 
-               </tr>
-            </table>
-
-
-
-
+            <!--output lines are rendered here-->
+            <div class="row m-0 mt-3">
+                <div class="col col-12 bg-secondary bg-opacity-25 rounded-2" id="output" ></div>
+            </div>
 
 
 

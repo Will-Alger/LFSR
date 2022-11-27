@@ -1,19 +1,12 @@
 const DROP_DOWN_MENU = $('.dropdown-menu');
 const CELL_CONTENTS = $('#cell_contents');
 const CELL_SELECT = $('#cell_select');
-const CELL = $('#cell');
+const CELL = $('.cell');
+const EXECUTE = $('#execute');
+const OUTPUT = $('#output');
+const RESET = $('#reset');
 
 $(function () {
-
-
-    /*
-* .dropdown-menu
-* # cell_contents
-*  # cell_select
-*
-* */
-
-
     init();
 
 
@@ -24,41 +17,31 @@ $(function () {
 
     CELL_SELECT.on('DOMSubtreeModified', function () {
         renderCells(CELL_SELECT.html());
+        OUTPUT.empty();
     })
 
-    CELL.each(function () {
-        this.addEventListener("click", function () {
-            $(this).html() === '1' ? $(this).html('0')  : $(this).html('1');
+    RESET.on('click', function () {reset();});
+
+    EXECUTE.on('click', function() {
+        console.log("hello ")
+        let result = " "
+        $('.cell').each(function () {
+            result = result.concat($(this).html());
         });
+        OUTPUT.append(("<p>" + result + "</p>"));
     });
 
 
-    //
-    // $("#calculate").click(function() {
-    //     let x = "";
-    //     $(".btn_content button").each(function(i, element) {
-    //         x =  x.concat(element.innerHTML);
-    //     })
-    //     console.log(x);
-    // })
-
-
-
-    // $("#reload").click(function() {
-    //     $("tr").empty();
-    //     for(let i = 0; i<$("#cells").val(); i++) {
-    //     $("tr").append('<td><div class="btn_content"><button type="button" class="btn btn-outline-dark rounded-0 ">0</button></div></td>')
-    //     }
-    //     console.log('yes')
-    //     $(".btn_content button").each(function () {
-    //         this.addEventListener("click", function () {
-    //             $(this).html() === '1' ? $(this).html('0')  : $(this).html('1');
-    //         });
-    //     });
-    // })
-    
 
 })
+
+
+function reset() {
+    renderCells(5);
+    OUTPUT.empty();
+}
+
+
  function init() {
     renderCells(5);
     renderMenuOptions();
@@ -71,10 +54,17 @@ function renderMenuOptions () {
 }
 
 function renderCells(n) {
+    CELL_SELECT.html(n);
     $('#cell_contents').empty();
     for (let i = 0; i < n; i++) {
-        CELL_CONTENTS.append('<td><div class="cell"><button type="button" class="btn btn-outline-dark rounded-0 ">0</button></div></td>');
+        CELL_CONTENTS.append('<td><button type="button" class="btn btn-outline-dark rounded-0 cell">0</button></td>');
     }
+    $('.cell').each(function () {
+       this.addEventListener('click', function(){
+           console.log("hello");
+           $(this).html() === '1' ? $(this).html('0')  : $(this).html('1');
+       })
+    })
 }
 
 
