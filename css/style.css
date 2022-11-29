@@ -13,6 +13,10 @@
 
 }
 
+#cell_taps {
+    justify-content: space-evenly;
+}
+
 .cell {
     padding: 10px;
     width:50px !important;

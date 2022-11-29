@@ -7,10 +7,12 @@ const CELL = $('.cell');
 const EXECUTE = $('#execute');
 const OUTPUT = $('#output');
 const RESET = $('#reset');
+const CELL_TAPS = $("#cell_taps");
 
 $(function () {
     init();
-
+    let result = "";
+    let tripped = false;
 
     // when # of cells selected change
     DROP_DOWN_MENU.on('click', '.dropdown-item', function() {
@@ -22,15 +24,28 @@ $(function () {
         OUTPUT.empty();
     })
 
-    RESET.on('click', function () {reset();});
+    RESET.on('click', function () {
+        reset();
+        result = "";
+        tripped = false;
+    });
 
     // TODO change to actually do a shift and not just put cell contents in output
+
     EXECUTE.on('click', function() {
-        console.log("hello ")
-        let result = " "
-        $('.cell').each(function () {
-            result = result.concat($(this).html());
-        });
+        //console.log("hello ")
+        let val = registerVal();
+        let taps = getTaps();
+        if(tripped) {
+            result = keystream_output(val, result);
+        } else {
+            result = keystream_output(val);
+            tripped = true;
+        }
+        let next = next_register_val(val, taps);
+        $(".cell").each(function (index) {
+            this.innerHTML = next[index];
+        })
         OUTPUT.append(("<p>" + result + "</p>"));
     });
 })
@@ -53,6 +68,10 @@ function renderMenuOptions () {
     }
 }
 
+
+
+
+
 function renderCells(n) {
     CELL_SELECT.html(n);
     $('#cell_contents').empty();
@@ -65,6 +84,14 @@ function renderCells(n) {
            $(this).html() === '1' ? $(this).html('0')  : $(this).html('1');
        })
     })
+    renderTaps(n);
+}
+
+function renderTaps(n) {
+    $("#cell_taps").empty();
+    for(let i = 0; i < n; i++) {
+        CELL_TAPS.append('<td><input type="checkbox" class="taps"></td>')
+   }
 }
 
 
