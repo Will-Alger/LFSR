@@ -21,9 +21,7 @@ $(function () {
     });
 
     RESET.on('click', function () {
-        reset();
-        result = "";
-        tripped = false;
+        reset()
     });
 
     EXECUTE.on('click', function() {
