@@ -36,7 +36,7 @@
             <div class="row ">
                 <div class="col-auto">
                     <div class="dropdown float-start">
-                        <label for="cell_select">Number of cells :</label>
+                        <label class="pe-2" for="cell_select"><h6>Number of cells:</h6></label>
                         <button class="btn btn-dark dropdown-toggle" type="button" id="cell_select" data-bs-toggle="dropdown" aria-expanded="false">5</button>
                         <ul class="dropdown-menu"></ul>
                     </div>
@@ -49,33 +49,25 @@
                 </div>
             </div>
 
+
+
+            <div class="row mt-4">
+                <div class="col"><h6 class="float-start">Register: </h6><div class="text-danger float-start" id="error_msg"></div></div>
+            </div>
+
             <!--cells are rendered here-->
-            <div class="row"><div class="col">
-              <label class="float-start mt-3" for="cell_contents">Register :</label>
-            </div></div>
-            <table class="mt-4">
+            <table class="mt-3">
                 <tr id="cell_contents"></tr>
-
-                <!--
-                TODO 1. render checkboxes in #cell_taps, should be the same number specified in #cell_select
-                TODO 2. on checkbox check/uncheck, change corresponding cell button background to highlighted/un-highlighted
-                TODO 3. create some kind of additional row that displays cells being xored
-                TODO 4. Create additional dropdown after execute (defaults to 1) that allows you to specify how many times it should execute a shift cycle.
-
-
-                <input type="checkbox" class="taps">
-                -->
                 <tr id="cell_taps"></tr>
             </table>
 
-
-            <div class="row m-0 mt-3">
-                <div class="col col-12 bg-secondary bg-opacity-25 rounded-2 p-2" >Math is displayed here</div>
-            </div>
-
+<!--            <div class="row m-0 mt-3">-->
+<!--                <div class="col col-12 bg-secondary bg-opacity-25 rounded-2 p-2" >Math is displayed here</div>-->
+<!--            </div>-->
 
             <!--output lines are rendered here-->
             <div class="row m-0 mt-3">
+                <label for="output" class="p-0 mb-1"><h6 class=" float-start">Key Stream: </h6></label>
                 <div class="col col-12 bg-secondary bg-opacity-25 rounded-2" id="output" ></div>
             </div>
 
@@ -85,7 +77,7 @@
         </div>
     </main>
 
-    <footer class="mt-auto text-white-50">
+    <footer class="mt-2 text-white-50">
         <p>Copyright &copy 2022 (Will Alger, Christian Lane)
             <br>Designed for CSC-483 at  <a href="https://www.nku.edu" class="text-white">Northern Kentucky University</a>
             <br><a href="https://github.com/Will-Alger/LFSR" class="text-white">Github Repository</a>

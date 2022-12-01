@@ -1,9 +1,3 @@
-/*
-* This will include our logic for LFSR, including xor logic, shifting, etc.
-*/
-
-
-
 
 // input should be arr of 0s and 1s (int)
 function feedback(taps) { //xor is actually just modulo 2 so this does work
@@ -33,10 +27,10 @@ function next_register_val(arr, taps) {
     return arr2;
 }
 
-function getTaps() {
+function   getTaps() {
     let x = [];
     let arr = registerVal();
-    $(".taps").each(function(index) {
+    $(".tap").each(function(index) {
         if(this.checked){
             x.push(arr[index]);
         }
