@@ -36,6 +36,21 @@
 
 }
 
+.btn-outline-dark:hover {
+    background-color:#DADCDE;
+    color: black;
+}
+
+.btn-secondary {
+    color:black;
+    background-color: #AEB0B1;
+    border: 1px solid black;
+}
+
+.btn-secondary:hover {
+    background-color: #747576;
+    border: 1px solid black;
+}
 
 tr td {
     padding: 0;

@@ -9,6 +9,8 @@ const ERROR = $('#error_msg');
 
 let result = "";
 let tripped = false;
+
+
 ERROR.hide();
 
 $(function () {
@@ -25,16 +27,17 @@ $(function () {
     });
 
     EXECUTE.on('click', function() {
-        ERROR.empty();
-
         let val = registerVal();
         let taps = getTaps();
 
         if (taps.length > 0) {
-            if(tripped) { // if output has already occurred
-                result = keystream_output(val, result); // append to end of current output as part of the key stream
+            if (ERROR.is(':visible')) {
+                ERROR.fadeOut(100);
+            }
 
-            } else { // otherwise
+            if(tripped) {
+                result = keystream_output(val, result);
+            } else {
                 result = keystream_output(val);
                 tripped = true;
             }
@@ -44,9 +47,7 @@ $(function () {
             })
             OUTPUT.append(("<p>" + result + "</p>"));
         } else{
-            ERROR
-                .html("<h6 class='ps-1'>error: at least one tap must be selected</h6>")
-                .fadeToggle(300).delay(3000).fadeToggle(300).delay(3000);
+            displayError("* at least 1 cell must be tapped");
         }
     });
 })
@@ -58,8 +59,13 @@ function init() {
 }
 
 function reset() {
+    ERROR.empty();
     resetKeyStream();
     init();
+}
+
+function displayError(str) {
+    ERROR.html("<h6 class='ps-1'>" + str + "</h6>").fadeIn(300)
 }
 
 function resetKeyStream() {
@@ -107,20 +113,17 @@ function renderTaps(n) {
     for (let i = 0; i < n; i++) {renderTap();}
     attachTapListeners();
 }
+
 function attachTapListeners() {
     $('.tap').each(function (index) {
         this.addEventListener('change', function(){
             resetKeyStream();
+            let tap = $('#cell_contents td:nth-child(' + (index + 1) + ') button');
             if (this.checked) {
-                $('#cell_contents td:nth-child(' + (index + 1) + ') button')
-                    .removeClass('btn-outline-dark')
-                    .addClass('btn-secondary')
-                    .css("border", '1px solid black')
+                tap.removeClass('btn-outline-dark').addClass('btn-secondary');
             }
             else {
-                $('#cell_contents td:nth-child(' + (index + 1) + ') button')
-                    .removeClass('btn-secondary')
-                    .addClass('btn-outline-dark')
+                tap.removeClass('btn-secondary').addClass('btn-outline-dark');
             }
         });
     });

@@ -25,27 +25,30 @@
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header>
         <div>
-            <h3 class="float-md-start mb-0">LFSR Calculator</h3>
+            <h3 class=" mb-3">LFSR Calculator</h3>
         </div>
     </header>
 
     <main class="px-3">
-        <div class="container-sm bg-white text-black rounded-4" style ="padding: 100px; ">
+        <div class="container-md p-5 bg-white text-black rounded-4 shadow-lg" style ="padding: 100px; ">
+            <div class="row">
+                <div class="col-auto">
+                        <div class="dropdown float-start">
 
-            <!--buttons are placed here-->
-            <div class="row ">
-                <div class="col-auto">
-                    <div class="dropdown float-start">
-                        <label class="pe-2" for="cell_select"><h6>Number of cells:</h6></label>
-                        <button class="btn btn-dark dropdown-toggle" type="button" id="cell_select" data-bs-toggle="dropdown" aria-expanded="false">5</button>
-                        <ul class="dropdown-menu"></ul>
-                    </div>
+                            <button class="btn btn-dark dropdown-toggle me-2" type="button" id="cell_select" data-bs-toggle="dropdown" aria-expanded="false">5</button>
+                            <label class="pe-2" for="cell_select"><h6># cells:</h6></label>
+                            <ul class="dropdown-menu"></ul>
+                        </div>
                 </div>
-                <div class="col-auto">
-                    <button class="btn btn-outline-dark float-start" id="execute" type="button">Execute</button>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <button class="btn btn-outline-dark float-start me-2" id="execute" type="button">Execute</button>
                 </div>
-                <div class="col-auto">
-                    <button class="btn btn-danger" type="button" id="reset">Reset</button>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <button class="btn btn-danger float-start" type="button" id="reset">Reset</button>
                 </div>
             </div>
 
@@ -61,14 +64,9 @@
                 <tr id="cell_taps"></tr>
             </table>
 
-<!--            <div class="row m-0 mt-3">-->
-<!--                <div class="col col-12 bg-secondary bg-opacity-25 rounded-2 p-2" >Math is displayed here</div>-->
-<!--            </div>-->
-
-            <!--output lines are rendered here-->
             <div class="row m-0 mt-3">
                 <label for="output" class="p-0 mb-1"><h6 class=" float-start">Key Stream: </h6></label>
-                <div class="col col-12 bg-secondary bg-opacity-25 rounded-2" id="output" ></div>
+                <div class="col-12 bg-secondary bg-opacity-25 rounded-2" id="output" ></div>
             </div>
 
 
