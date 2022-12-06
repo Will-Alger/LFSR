@@ -32,7 +32,8 @@
     padding: 20px;
 }
 #output p {
-    margin-top:2px;
+    margin:0;
+    padding: 0;
 
 }
 

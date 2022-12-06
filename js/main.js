@@ -45,7 +45,17 @@ $(function () {
             $(".cell").each(function (index) {
                 this.innerHTML = next[index];
             })
-            OUTPUT.append(("<p>" + result + "</p>"));
+
+            let regVal = ""
+            for (let cell of val)
+                regVal = regVal.concat(cell);
+
+            OUTPUT.append(
+               "<p>" + "Register: &nbsp;&nbsp;&nbsp;&nbsp;"+ regVal + "</p>" +
+                "<p class='mb-3'>" + "Keystream: &nbsp;" + result + "&nbsp;[" + result.length + " bit(s)]" +"</p>"
+
+            );
+            OUTPUT.scrollTop(OUTPUT[0].scrollHeight);
         } else{
             displayError("* at least 1 cell must be tapped");
         }
