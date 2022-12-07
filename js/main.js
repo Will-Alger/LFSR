@@ -51,9 +51,21 @@ $(function () {
                 regVal = regVal.concat(cell);
 
             OUTPUT.append(
-               "<p>" + "Register: &nbsp;&nbsp;&nbsp;&nbsp;"+ regVal + "</p>" +
-                "<p class='mb-3'>" + "Keystream: &nbsp;" + result + "&nbsp;[" + result.length + " bit(s)]" +"</p>"
-
+                $("<div>", {class: "output-item mt-3"}).append(
+                    $("<p>", ).append(
+                        $("<span>").html(
+                            "Register: &nbsp&nbsp&nbsp&nbsp&nbsp" + regVal
+                        ),
+                    ),
+                    $("<p>", {class: "col-12 bg-light mt-1"}).append(
+                        $("<span>", ).html(
+                            "Keystream: &nbsp" + result
+                        ),
+                        $("<span>", {class:"float-end"}).text(
+                            "[" + result.length + "bit(s)] "
+                        ),
+                    )
+                ),
             );
             OUTPUT.scrollTop(OUTPUT[0].scrollHeight);
         } else{
