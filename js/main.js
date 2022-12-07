@@ -62,7 +62,7 @@ $(function () {
                             "Keystream: &nbsp" + result
                         ),
                         $("<span>", {class:"float-end"}).text(
-                            "[" + result.length + "bit(s)] "
+                            result.length + " bit(s)"
                         ),
                     )
                 ),
