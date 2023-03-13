@@ -1,8 +1,8 @@
 # Visualizer for Linear Feedback Shift Register (LFSR)
 
 ## Features:
-- Change register size
-- View the keystream generation
+- Adjustable register size
+- keystream output
 - Step-through key stream generation
 
 #### Steps to use:
