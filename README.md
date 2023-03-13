@@ -11,7 +11,7 @@
 - Click execute to begin execute the keystream
 
 #### Future features to implement:
-- Mutiple registers
+- Multiple registers
 - Notification of a repeating keystream.
 - Generation of maximum keystream before repeating
 
