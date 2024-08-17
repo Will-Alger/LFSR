@@ -1,5 +1,10 @@
 # Visualizer for Linear Feedback Shift Register (LFSR)
 
+![image](https://github.com/user-attachments/assets/8ed69e50-c75c-4371-8a36-a08dd2918f2a)
+
+
+
+
 ## Features:
 - Adjustable register size
 - keystream output
